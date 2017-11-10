@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link data-require="bootstrap@3.0.0" data-semver="3.0.0" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="form-title">
+        Convert Roman to Arabic</p>
+      <!--<form>-->
+      <div class="wrap">
+        <input type="text" id="fromRoman" placeholder="Roman Number" />
+        <button onclick="convertRoamnToArabic()" type="submit" class="btn btn-success btn-sm">Convert</button>
+      </div>
+      <div>
+        <input type="text" id="result" readonly="readonly" placeholder="Arabic Number" />
+      </div>
+      <!--</form>-->
+    </div>
+  </div>
+</div>
+
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="assets/js/angular.js"></script>
+<script data-require="jquery@3.1.1" data-semver="3.1.1" src="assets/js/jquery-1.12.0.min.js"></script>
+<script src="assets/js/system@0.18.17.js"></script>
+<script>
+    System.config({
+        paths: {
+            'script-from-roman.js': 'controllers/script-from-roman.js'
+        }
+    });
+    System.import('script-from-roman.js').then(function() {
+
+    });
+
+    function convertRoamnToArabic() {
+        $('#fromRoman').removeClass("wrongInput");
+        $('#result').val(convertFromRoman($('#fromRoman').val()));
+        if ($('#result').val() == 0) {
+            $('#fromRoman').addClass("wrongInput");
+        }
+    }
+    var romanTxtBox = document.getElementById('fromRoman');
+    romanTxtBox.onclick = function() {
+        $('#fromRoman').removeClass("wrongInput");
+    }
+</script>
+</body>
+</html>
