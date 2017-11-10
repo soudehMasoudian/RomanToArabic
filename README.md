@@ -1,6 +1,5 @@
 <pre>
-text goes here and here
-             and here and here            Some out here
+
 
 //  .-------.        ,-----.    ,---.    ,---.   ____    ,---.   .--.
 //  |  _ _   \     .'  .-,  '.  |    \  /    | .'  __ `. |    \  |  |
